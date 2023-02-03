@@ -2,13 +2,9 @@ const { urlencoded } = require("express");
 const express = require("express");
 const app = express();
 const path = require("path");
-const date = new Date();
-const hour = date.getHours();
 
 app.use(express.json());
 app.use(urlencoded({ extended: false }));
-
-app.use("/css", express.static(path.join(__dirname, "css")));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
@@ -17,6 +13,13 @@ app.get("/", (req, res) => {
 app.post("/result", (req, res) => {
   let name = req.body.name;
   let age = req.body.age;
+
+  res.redirect(`/output?name=${name}&age=${age}`);
+});
+
+app.get("/output", (req, res) => {
+  let name = req.query.name;
+  let age = req.query.age;
 
   if (!name) name = "person";
   if (!age) age = 16;
