@@ -3,6 +3,14 @@ module.exports = class Product {
     this._id = id;
   }
 
+  setImg(value) {
+    this._img = value;
+  }
+
+  setImgBig(value) {
+    this._imgBig = value;
+  }
+
   setName(value) {
     this._name = value;
   }
@@ -28,6 +36,14 @@ module.exports = class Product {
   }
 
   getDescription() {
-    this._description;
+    return this._description;
+  }
+
+  getImg() {
+    return this._img;
+  }
+
+  getImgBig() {
+    return this._imgBig;
   }
 };

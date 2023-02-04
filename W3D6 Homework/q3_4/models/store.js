@@ -4,11 +4,13 @@ const products = [];
 module.exports = class Store {
   static itemNumber = 0;
 
-  static addNewProduct(name, price, description) {
+  static addNewProduct(name, price, description, img, imgBig) {
     let product = new Product(Store.itemNumber);
     product.setName(name);
     product.setDescription(description);
     product.setPrice(price);
+    product.setImg(img);
+    product.setImgBig(imgBig);
 
     products.push(product);
     Store.itemNumber++;

@@ -2,8 +2,14 @@ module.exports = class ShoppingCart {
   constructor() {
     this._cartItems = [];
   }
-  addCartItem(productId, quantity) {
-    this._cartItems.push({ id: productId, quantity: quantity });
+  addCartItem(product, quantity) {
+    this._cartItems.push({
+      id: product.getId(),
+      name: product.getName(),
+      price: product.getPrice(),
+      img: product.getImg(),
+      quantity: quantity,
+    });
   }
 
   getAllCartItems() {

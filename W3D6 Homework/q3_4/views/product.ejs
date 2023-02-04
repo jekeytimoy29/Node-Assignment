@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+<%- include('fragments/head') %>
 </head>
 
 <body>
-  <h1><%= title %></h1>
-  <p>Welcome to <%= title %></p>
-</body>
-
-</html>
+  <div class="my-container">
+    <%- include('fragments/navigation') %>
+    <div class="my-content">
+      <div class="card mb-3 my-card-big">
+        <img class="card-img-top" src=<%= product.getImgBig() %> alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= product.getName() %></h5>
+          <p class="card-text"><strong>Description:</strong> <%= product.getDescription() %></p>
+          <p class="card-text"><strong>Price:</strong> $<%= product.getPrice().toFixed(2) %></p>
+          <a class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <%- include('fragments/end') %>

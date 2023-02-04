@@ -23,6 +23,7 @@ app.use(
   "/stylesheets",
   express.static(path.join(__dirname, "public", "stylesheets"))
 );
+app.use("/images", express.static(path.join(__dirname, "public", "images")));
 
 app.use("/", productRouter);
 app.use("/shoppingcart", shoppingCartRouter);
