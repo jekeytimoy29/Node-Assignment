@@ -7,10 +7,15 @@ const hour = date.getHours();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/css", express.static(path.join(__dirname, "css")));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "public", "view"));
+
+app.use("/css", express.static(path.join(__dirname, "public", "style")));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.render("index", {
+    css: hour >= 6 && hour <= 18 ? "day.css" : "night.css",
+  });
 });
 
 app.post("/result", (req, res) => {
