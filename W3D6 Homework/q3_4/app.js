@@ -19,12 +19,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(
-  "/stylesheets",
-  express.static(path.join(__dirname, "public", "stylesheets"))
-);
-app.use("/images", express.static(path.join(__dirname, "public", "images")));
-
 app.use("/", productRouter);
 app.use("/shoppingcart", shoppingCartRouter);
 
