@@ -48,6 +48,19 @@ body {
   background-color: #cce2cb;
 }
 
+.my-card-big img {
+  width: 800px;
+  height: 350px;
+}
+
+.my-clickable {
+  color: inherit;
+}
+
+.my-clickable:hover {
+  color: inherit;
+}
+
 .my-card {
   background-color: #cce2cb;
 }

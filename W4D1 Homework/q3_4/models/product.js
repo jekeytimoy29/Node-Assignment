@@ -1,49 +1,10 @@
 module.exports = class Product {
-  constructor(id) {
-    this._id = id;
-  }
-
-  setImg(value) {
-    this._img = value;
-  }
-
-  setImgBig(value) {
-    this._imgBig = value;
-  }
-
-  setName(value) {
-    this._name = value;
-  }
-
-  setPrice(value) {
-    this._price = value;
-  }
-
-  setDescription(value) {
-    this._description = value;
-  }
-
-  getId() {
-    return this._id;
-  }
-
-  getName() {
-    return this._name;
-  }
-
-  getPrice() {
-    return this._price;
-  }
-
-  getDescription() {
-    return this._description;
-  }
-
-  getImg() {
-    return this._img;
-  }
-
-  getImgBig() {
-    return this._imgBig;
+  constructor(id, name, price, description, img, imgBig) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.description = description;
+    this.img = img;
+    this.imgBig = imgBig;
   }
 };
