@@ -1,0 +1,18 @@
+<%- include('fragments/head') %>
+</head>
+
+<body>
+  <div class="my-container">
+    <%- include('fragments/navigation') %>
+    <div class="my-content">
+      <div class="card mb-3 my-card-big">
+        <img class="card-img-top" src=<%= product.getImgBig() %> alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= product.getName() %></h5>
+          <p class="card-text"><strong>Description:</strong> <%= product.getDescription() %></p>
+          <p class="card-text"><strong>Price:</strong> $<%= product.getPrice().toFixed(2) %></p>
+          <a class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <%- include('fragments/end') %>

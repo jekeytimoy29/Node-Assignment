@@ -1,0 +1,57 @@
+body {
+  padding: 1%;
+  background-image: url("/images/fruits-bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.my-header {
+  grid-area: h;
+  background-image: url("/images/fruits-banner.jpeg");
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.my-content {
+  padding: 5%;
+  grid-area: c;
+}
+
+.my-nav {
+  grid-area: n;
+}
+
+.my-footer {
+  grid-area: f;
+}
+
+.my-container {
+  display: grid;
+  grid-template-areas:
+    "h h h h"
+    "h h h h"
+    "n n n n"
+    "c c c c"
+    "c c c c"
+    "c c c c"
+    "f f f f"
+    "f f f f";
+}
+
+.my-card-big {
+  height: 600px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #cce2cb;
+}
+
+.my-card {
+  background-color: #cce2cb;
+}
+
+.my-card > img {
+  height: 240px;
+}

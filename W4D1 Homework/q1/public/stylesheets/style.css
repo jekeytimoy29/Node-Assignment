@@ -1,0 +1,15 @@
+body {
+  padding: 2%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  margin: 2%;
+}
+
+table {
+  width: 40%;
+}
