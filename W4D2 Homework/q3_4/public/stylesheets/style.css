@@ -45,7 +45,7 @@ body {
   width: 800px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #cce2cb;
+  background-color: #bbd4d2;
 }
 
 .my-card-big img {
@@ -62,7 +62,7 @@ body {
 }
 
 .my-card {
-  background-color: #cce2cb;
+  background-color: #bbd4d2;
 }
 
 .my-card > img {

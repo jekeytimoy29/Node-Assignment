@@ -1,4 +1,7 @@
 <%- include('fragments/head') %>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/javascripts/product.js"></script>
 </head>
 
 <body>
@@ -12,11 +15,24 @@
           <p class="card-text"><strong>Description:</strong> <%= product.description %></p>
           <p class="card-text"><strong>Unit Price:</strong> $<%= product.price.toFixed(2) %></p>
 
-          <form action="/shoppingcart" method="post">
-            <input type="hidden" name="productId" value=<%= product.id %>>
+          <form id="productForm">
+            <input type="hidden" id="productId" value=<%= product.id %>>
             <button type="submit" class="btn btn-primary">Add to cart</button>
           </form>
         </div>
+      </div>
+      <div class="alert alert-success alert-dismissible fade" id="alert-success" role="alert">
+        Successfully added item. You may go now to your <a href="/shoppingcart" class="alert-link">Shopping Cart
+          (<%= cartItemsCount %>)</a>
+        <button type="button" class="close my-close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="alert alert-danger alert-dismissible fade" id="alert-failed" role="alert">
+        Failed to add item in cart.
+        <button type="button" class="close my-close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     </div>
     <%- include('fragments/end') %>
