@@ -9,8 +9,7 @@ $(() => {
     const data = { productId: $("#productId").val() };
     $.post({
       url: "/product/addToCart",
-      data: JSON.stringify(data),
-      contentType: "application/json; charset=utf-8",
+      data: data,
     })
       .done(successFunc)
       .fail(errorFunc);
