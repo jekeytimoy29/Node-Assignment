@@ -1,0 +1,26 @@
+<%- include('fragments/head') %>
+</head>
+
+<body>
+    <div class="my-container">
+        <%- include('fragments/navigation') %>
+        <div class="my-content">
+            <div class="card-columns">
+                <% for (const product of products) { %>
+                <div class="col-sm-6">
+                    <a class="my-clickable" href="/product?productId=<%= product.id %>">
+                        <div class="card my-card" style="width: 18rem;">
+                            <img class="card-img-top" src=<%= product.img %> alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= product.name %></h5>
+                                <p class="card-text"><strong>Description:</strong> <%= product.description %></p>
+                                <p class="card-text"><strong>Unit Price:</strong> $<%= product.price.toFixed(2) %></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <%- include('fragments/end') %>

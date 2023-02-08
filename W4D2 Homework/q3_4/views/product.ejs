@@ -1,0 +1,22 @@
+<%- include('fragments/head') %>
+</head>
+
+<body>
+  <div class="my-container">
+    <%- include('fragments/navigation') %>
+    <div class="my-content">
+      <div class="card mb-3 my-card-big">
+        <img class="card-img-top" src=<%= product.imgBig %> alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <p class="card-text"><strong>Description:</strong> <%= product.description %></p>
+          <p class="card-text"><strong>Unit Price:</strong> $<%= product.price.toFixed(2) %></p>
+
+          <form action="/shoppingcart" method="post">
+            <input type="hidden" name="productId" value=<%= product.id %>>
+            <button type="submit" class="btn btn-primary">Add to cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include('fragments/end') %>
